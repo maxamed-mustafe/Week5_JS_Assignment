@@ -18,7 +18,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+function sendMessage(UserName, callback){
+  return callback(UserName);}
+  
+  function fariin(UserName){
+    console.log(`welcome, ${UserName}`)
+  }
+  sendMessage("maxamed", fariin);
+  
+  
 
 
 /*
@@ -48,6 +56,21 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature(temperatureValue, CB){
+  return CB(temperatureValue);
+}
+function theCallBackFunction(temperatureValue){
+  if(temperatureValue>30){
+    console.log(`${temperatureValue}°C is Hot.`)
+  }
+  else if(temperatureValue>15 && temperatureValue<=30){
+    console.log(`${temperatureValue}°C is Warm.`)
+  }
+  else{
+    console.log(`${temperatureValue}°C is Cold.`)
+  }
+}
+checkTemperature(10, theCallBackFunction );
 
 
 
@@ -73,3 +96,18 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function evaluateAnswer(question,correctAnswer, cb){
+  const userAnswer= prompt(question)
+  return cb(userAnswer, correctAnswer)
+  
+}
+function ACallBackFunction(userAnswer, correctAnswer){
+  if(userAnswer===correctAnswer){
+    console.log("correct!")
+  }
+  else{
+    console.log(`incorrect! the the correct answer is ${correctAnswer}`)
+  }
+}
+evaluateAnswer("what is 5+5?", "10", ACallBackFunction)
